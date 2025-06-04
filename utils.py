@@ -33,7 +33,8 @@ class Get_data():
         + ";UID="
         + st.secrets["username"]
         + ";PWD="
-        + st.secrets["password"])
+        + st.secrets["password"]
+        + ";PORT=1433")
     
     def get_stock_info(self):
         """
