@@ -7,6 +7,7 @@ from typing import Iterable, Literal, Optional
 def make_list(a: Iterable):
     return ','.join(f"'{code}'" for code in a)
 
+@st.cache_resource
 class Get_data():
     """
     初始化获取数据链接。
@@ -18,7 +19,7 @@ class Get_data():
     SERVER: 连接数据库的服务器（除非你知道自己在做什么，否则不要更改默认值。
     DATABASE: 连接数据库的数据库名称（除非你知道自己在做什么，否则不要更改默认值。
     """
-    @st.cache_resource
+    
     # def __init__(self, index_code: str="000300", UID: str="syzx_jydb005",
     #              PWD: str="KJGCNKRn", SERVER: str="10.2.47.124", DATABASE: str="JYDB"):
     def __init__(self, index_code: str = "000300", UID: str = st.secrets["username"],
