@@ -20,12 +20,12 @@ class Get_data():
     DATABASE: 连接数据库的数据库名称（除非你知道自己在做什么，否则不要更改默认值。
     """
     
-    # def __init__(self, index_code: str="000300", UID: str="syzx_jydb005",
-    #              PWD: str="KJGCNKRn", SERVER: str="10.2.47.124", DATABASE: str="JYDB"):
-    def __init__(self, index_code: str = "000300", UID: str = st.secrets["username"],
-                     PWD: str = st.secrets["password"], SERVER: str = st.secrets["server"], DATABASE: str = st.secrets["database"]):
+    def __init__(self, index_code: str="000300", UID: str="syzx_jydb005",
+                 PWD: str="KJGCNKRn", SERVER: str="10.2.47.124", DATABASE: str="JYDB"):
+    # def __init__(self, index_code: str = "000300", UID: str = st.secrets["username"],
+    #                  PWD: str = st.secrets["password"], SERVER: str = st.secrets["server"], DATABASE: str = st.secrets["database"]):
         self.index_code = index_code
-        self.con = pyodbc.connect(f"SERVER={SERVER};UID={UID};PWD={PWD};DRIVER={{ODBC Driver 17 for SQL Server}};PORT=1433;DATABASE={DATABASE}")
+        self.con = pyodbc.connect(f"SERVER={st.secrets["server"]};UID={st.secrets["username"]};PWD={st.secrets["password"]};DRIVER={{ODBC Driver 17 for SQL Server}};PORT=1433;DATABASE={st.secrets["database"]}")
     
     def get_stock_info(self):
         """
