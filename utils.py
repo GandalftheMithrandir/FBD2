@@ -25,7 +25,15 @@ class Get_data():
     # def __init__(self, index_code: str = "000300", UID: str = st.secrets["username"],
     #                  PWD: str = st.secrets["password"], SERVER: str = st.secrets["server"], DATABASE: str = st.secrets["database"]):
         self.index_code = index_code
-        self.con = pyodbc.connect(f"SERVER={st.secrets["server"]};UID={st.secrets["username"]};PWD={st.secrets["password"]};DRIVER={{ODBC Driver 17 for SQL Server}};PORT=1433;DATABASE={st.secrets["database"]}")
+        # self.con = pyodbc.connect(f"SERVER={st.secrets["server"]};UID={st.secrets["username"]};PWD={st.secrets["password"]};DRIVER={{ODBC Driver 17 for SQL Server}};PORT=1433;DATABASE={st.secrets["database"]}")
+        self.con = pyodbc.connect("DRIVER={ODBC Driver 17 for SQL Server};SERVER="
+        + st.secrets["server"]
+        + ";DATABASE="
+        + st.secrets["database"]
+        + ";UID="
+        + st.secrets["username"]
+        + ";PWD="
+        + st.secrets["password"])
     
     def get_stock_info(self):
         """
