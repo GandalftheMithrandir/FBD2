@@ -1,0 +1,18 @@
+# IDE 配置
+.idea/
+
+# Python 缓存
+__pycache__/
+
+# Streamlit 敏感配置
+.streamlit/secrets.toml
+.streamlit/config.toml
+
+# 其他可能需要忽略的
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
