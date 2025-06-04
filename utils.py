@@ -7,7 +7,7 @@ from typing import Iterable, Literal, Optional
 def make_list(a: Iterable):
     return ','.join(f"'{code}'" for code in a)
 
-@st.cache_resource
+# @st.cache_resource
 class Get_data():
     """
     初始化获取数据链接。
